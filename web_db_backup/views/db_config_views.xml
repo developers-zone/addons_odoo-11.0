@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+	<record id="view_backup_config_form" model="ir.ui.view">
+        <field name="name">database.backup.form</field>
+        <field name="model">database.backup</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+            	<header>
+                    <button name="generate_backup" string="Generate" type="object" />
+                </header>
+                <group>
+                	<group>
+	                    <field name="name"/>
+	                    <field name="url"/>
+	                    <field name="db_name"/>
+	                </group>
+	                <group>
+                	    <field name="backup_type"/>
+	                    <field name="folder"/>
+	                    <field name="remarks"/>
+                	</group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_backup_config_tree" model="ir.ui.view">
+        <field name="name">database.backup.tree</field>
+        <field name="model">database.backup</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Backups">
+                <field name='name'/>
+                <field name='db_name'/>
+                <field name='url'/>
+                <field name='folder'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_database_backup_form" model="ir.actions.act_window">
+        <field name="name">Generate Backup</field>
+        <field name="res_model">database.backup</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_backup_config_tree"/>
+    </record>
+	    
+	<menuitem parent="base.next_id_9"
+	    id="menu_database_backup"
+	    action="action_database_backup_form"/>
+  </data>
+</odoo>
