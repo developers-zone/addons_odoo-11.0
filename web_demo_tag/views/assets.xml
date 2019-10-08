@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="Demo Tag Assets" inherit_id="web.assets_backend">
+		    <xpath expr="." position="inside">
+		        <link rel="stylesheet" href="/web_demo_tag/static/src/css/main.css"/>
+		        <script type="text/javascript" src="/web_demo_tag/static/src/js/main.js"/>
+		    </xpath>
+		</template>
+    </data>
+</odoo>

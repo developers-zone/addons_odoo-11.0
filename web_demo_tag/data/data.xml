@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- Add demo_tag default configuration parameters -->
+		<record id="default_demo_tag_name" model="ir.config_parameter">
+		    <field name="key">demo_tag.name</field>
+		    <field name="value"><![CDATA[Demo Server<br/>({db_name})]]></field>
+		</record>
+		<record id="set_demo_tag_color" model="ir.config_parameter">
+		    <field name="key">demo_tag.color</field>
+		    <field name="value">#B22222</field>
+		</record>
+		<record id="set_demo_tag_background_color" model="ir.config_parameter">
+		    <field name="key">demo_tag.background.color</field>
+		    <field name="value">rgba(215, 189, 233,.8)</field>
+		</record>
+    </data>
+</odoo>
