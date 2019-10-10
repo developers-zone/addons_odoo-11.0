@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="assets_backend" name="searchbox_wide_custom assets" inherit_id="web.assets_backend">
+	        <xpath expr="." position="inside">
+	            <link rel="stylesheet" href="/web_searchbox_wide/static/src/css/custom.css"/>
+	        </xpath>
+	    </template>
+    </data>
+</odoo>
