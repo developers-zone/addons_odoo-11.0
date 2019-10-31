@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+	    <!-- To hide price on /shop for public users  -->
+        <template id="manage_products_item" inherit_id="website_sale.products_item">
+        	<xpath expr="//form/div/section/div[@itemprop='offers']" position="attributes">
+				<attribute name="t-if">request.env.user != request.website.user_id</attribute>
+	   		</xpath>
+	    </template>
+	    
+	    <!-- To hide price on /shop/product/ for public users  -->
+        <template id="manage_product_price" inherit_id="website_sale.product_price">
+        	<xpath expr="//div[@itemprop='offers']" position="attributes">
+				<attribute name="t-if">request.env.user != request.website.user_id</attribute>
+	   		</xpath>
+	    </template>
+        
+	    <!-- To hide href, ADDTOCART on /shop/product/ for public users  -->
+	    <template id="manage_product" inherit_id="website_sale.product">
+        	<xpath expr="//div[@id='product_details']/form/div/a" position="attributes">
+				<attribute name="t-if">request.env.user != request.website.user_id</attribute>
+	   		</xpath>
+	    </template>
+	    
+	    <!-- To hide quantity on /shop/product/ for public users  -->
+        <template id="manage_product_quantity" inherit_id="website_sale.product_quantity">
+        	<xpath expr="//div[@class='css_quantity input-group oe_website_spinner']" position="attributes">
+				<attribute name="t-if">request.env.user != request.website.user_id</attribute>
+	   		</xpath>
+	    </template>
+    </data>
+</odoo>
