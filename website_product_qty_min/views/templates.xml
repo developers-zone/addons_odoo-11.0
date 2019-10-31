@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <template id="payment" inherit_id="website_sale.cart">
+		    <xpath expr="//div" position="inside">
+		        <t t-if="not valid">
+		        	<span><t t-esc="valid"/>cvcv</span>
+		            <div class="alert alert-danger">
+		                <strong>Warning!</strong>
+		                Cart failures minimum quantity criteria.
+		            </div>
+		        </t>
+		    </xpath>
+		</template>
+    </data>
+</odoo>
